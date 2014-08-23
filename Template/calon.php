@@ -1,4 +1,4 @@
-<div class="left">
+			<div class="left">
 				<div class="panel">
 					<a href="index.php" class="btn">Home <img src="images/smilies/cool2.gif"></a>
 					<a href="register.php" class="btn">Register <img src="images/smilies/request.gif"></a>

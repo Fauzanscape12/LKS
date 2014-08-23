@@ -13,6 +13,7 @@ session_start();
 //tangkap data dari form login
 $username = $_POST['username'];
 $password = $_POST['password'];
+$level = $_POST['level'];
 
 //untuk mencegah sql injection
 //kita gunakan mysql_real_escape_string
@@ -44,6 +45,7 @@ if (empty($username) && empty($password)) {
 }
 
 $q = mysql_query("select * from student where username='$username' and password='$password'");
+$a = mysql_fetch_array($q);
 
 if (mysql_num_rows($q) == 1) {
 	//kalau username dan password sudah terdaftar di database
@@ -51,7 +53,14 @@ if (mysql_num_rows($q) == 1) {
 	$_SESSION['username'] = $username;
 	
 	//redirect ke halaman index
-	header('location:index.php');
+	if ($a['level'] == 1) {
+		# code...
+		header('location:admin.php');
+	}
+	elseif ($a['level'] == 0) {
+		# code...
+		header('location:index.php');
+	}
 	include 'template/header-login.php';
 } else {
 	//kalau username ataupun password tidak terdaftar di database
