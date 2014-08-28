@@ -44,7 +44,10 @@ class connect
 		$i = 1;
 		while ($data = mysql_fetch_array($hasil)) {
 			# code...
-			echo "<tr><td>".$i."</td><td>".$data['judul']."</td><td>".$data['pengarang']."</td><td>".$data['penerbit']."</td><td>".$data['tahunTerbit']."</td>
+
+			
+			echo "<tr><td>".$i."</td><td>".$data['judul']."</td><td>".$data['pengarang']."</td><td>".$data['penerbit']."</td><td>".$data['tahunterbit']."</td>
+
 			<td><a href='".$_SERVER['PHP_SELF']."?op=edit&id=".$data['id']."'>Edit</a> | 
 			<a href='".$_SERVER['PHP_SELF']."?op=del&id=".$data['id']."'>Hapus</a></td></tr>";
 			$i++;
@@ -72,6 +75,7 @@ class connect
 		else if ($type == 'thnterbit') return $data['tahunterbit'];
 	}
 
+
 	public function lihatdata($type,$id)
 	{
 		# code...
@@ -83,6 +87,7 @@ class connect
 		else if ($type == 'penerbit') return $data['penerbit'];
 		else if ($type == 'thnterbit') return $data['tahunterbit'];
 	}
+
 
 	public function update($id,$judul,$pengarang,$penerbit,$thnterbit)
 	{
@@ -129,5 +134,4 @@ class connect
 			echo "Belum";
 		}
 	}
-
 }

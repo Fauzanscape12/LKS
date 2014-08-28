@@ -16,7 +16,11 @@
 							$n = 1;
 							while ($r = mysql_fetch_array($q)) {
 								if($r['score']>70){ $warna="#B3D577"; } else {$warna="#D87676";}
+<<<<<<< HEAD
 								echo '<tr bgcolor="'.$warna.'" style="color:black;"><td>'.$n.'</td><td>'.$r["id"].'</td><td>'.$r["username"].'</td><td>'.$r['hero'].'</td><td>'.$r["score"].'</td><td><a href="ubah.php?op=edit&id='.$r["id"].'"> Edit</a></td></tr>';
+=======
+								echo '<tr bgcolor="'.$warna.'" style="color:black;"><td>'.$n.'</td><td>'.$r["id"].'</td><td>'.$r["username"].'</td><td>'.$r['hero'].'</td><td>'.$r["score"].'</td><td><a href="ubah.php"> Edit</a></td></tr>';
+>>>>>>> 9e7870bd050d57150f1c4dc04f9d98ece7958ea0
 								$n++;
 							}
 							?>
